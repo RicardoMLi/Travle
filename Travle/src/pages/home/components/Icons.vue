@@ -4,7 +4,7 @@
 			<swiper-slide v-for="(page, index) of pages" :key="index">
 				<div class="icon" v-for="item of page" :key="item.id">
 					<div class="icon-img">
-						<img class="icon-img-content" :src="item.imgUrl" alt="item.desc">
+						<img class="icon-img-content" :src="item.imgUrl" :alt="item.desc">
 					</div>
 					<p class="icon-desc">{{ item.desc }}</p>
 				</div>
@@ -58,11 +58,6 @@ export default{
   			id: '008',
   			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
   			desc: '动植物园'
-  		},
-  		{
-  			id: '009',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-  			desc: '玻璃栈道'
   		}]
   	}
   },
@@ -87,7 +82,7 @@ export default{
 	@import '~styles/mixins.styl'
 	.icons >>> .swiper-container
 		height: 0
-		padding-bottom: 50%	
+		padding-bottom: 50%
 	.icon
 		position: relative
 		overflow: hidden
