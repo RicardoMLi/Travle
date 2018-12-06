@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-		<swiper>
+		<swiper :options="swiperOption">
 			<swiper-slide v-for="(page, index) of pages" :key="index">
 				<div class="icon" v-for="item of page" :key="item.id">
 					<div class="icon-img">
@@ -17,63 +17,69 @@
 
 export default{
   name: 'HomeIcons',
-  data () {
-  	return {
-  		iconList: [{
-  			id: '001',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-  			desc: '景点门票'
-  		},
-  		{
-  			id: '002',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-  			desc: '动植物园'
-  		},
-  		{
-  			id: '003',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-  			desc: '玻璃栈道'
-  		},
-  		{
-  			id: '004',
-  			imgUrl: 'https://img1.qunarzz.com/piao/fusion/1811/1d/c46140e32fffa502.png',
-  			desc: '去哪臻选'
-  		},
-  		{
-  			id: '005',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-  			desc: '亲子游'
-  		},
-  		{
-  			id: '006',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-  			desc: '自然风光'
-  		},
-  		{
-  			id: '007',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-  			desc: '景点门票'
-  		},
-  		{
-  			id: '008',
-  			imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-  			desc: '动植物园'
-  		}]
-  	}
+  props: {
+    list: Array
   },
   computed: {
-  	pages () {
-  		const pages = []
-  		this.iconList.forEach((item, index) => {
-  			const page = Math.floor(index / 8);
-  			if(!pages[page]){
-  				pages[page] = [];
-  			}
-  			pages[page].push(item);
-  		})
-  		return pages
+    pages () {
+        const pages = []
+        this.list.forEach((item, index) => {
+            const page = Math.floor(index / 8);
+            if(!pages[page]){
+                pages[page] = [];
+            }
+            pages[page].push(item);
+        })
+        return pages
+    }
+  },
+  data () {
+  	return {
+        swiperOption:{
+            autoplay: false
+        }
+  		// iconList: [{
+  		// 	id: '001',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
+  		// 	desc: '景点门票'
+  		// },
+  		// {
+  		// 	id: '002',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
+  		// 	desc: '动植物园'
+  		// },
+  		// {
+  		// 	id: '003',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
+  		// 	desc: '玻璃栈道'
+  		// },
+  		// {
+  		// 	id: '004',
+  		// 	imgUrl: 'https://img1.qunarzz.com/piao/fusion/1811/1d/c46140e32fffa502.png',
+  		// 	desc: '去哪臻选'
+  		// },
+  		// {
+  		// 	id: '005',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
+  		// 	desc: '亲子游'
+  		// },
+  		// {
+  		// 	id: '006',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
+  		// 	desc: '自然风光'
+  		// },
+  		// {
+  		// 	id: '007',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
+  		// 	desc: '景点门票'
+  		// },
+  		// {
+  		// 	id: '008',
+  		// 	imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
+  		// 	desc: '动植物园'
+  		// }]
   	}
-  }
+  },
 }
 </script>
 
