@@ -22,26 +22,6 @@ export default{
     props: {
         list: Array
     },
-    // data () {
-    //     return {
-    //         weekendList: [{
-    //             id: '001',
-    //             imgUrl: 'http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg',
-    //             title: '浮在海上的绿洲',
-    //             desc: '南国滨海之城，阳江等你'
-    //         },{
-    //             id: '002',
-    //             imgUrl: 'http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg',
-    //             title: '南国冰雪乐园',
-    //             desc: '这里可以让你在南国感受到北国风光'
-    //         },{
-    //             id: '003',
-    //             imgUrl: 'http://img1.qunarzz.com/sight/source/1509/86/e3a589b8ac4498.jpg_r_640x214_b8678794.jpg',
-    //             title: '东莞赏秋胜地',
-    //             desc: '在东莞，边走边摄的醉美秋色'
-    //         },]
-    //     }
-    // }
 }
 </script>
 
